@@ -1,0 +1,40 @@
+{
+  "name": "css-workflow-boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate for projects using SCSS, 7-1 CSS Architecture, Autoprefixer and other tools to build minified stylesheets.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node-sass scss/main.scss css/styles.dev.css -w",
+    "compile:scss": "node-sass scss/main.scss css/styles.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/styles.comp.css -o css/styles.prefix.css",
+    "concat:css": "concat -o css/styles.concat.css css/font-awesome.css css/styles.prefix.css",
+    "compress:css": "node-sass css/styles.concat.css css/styles.min.css --output-style compressed",
+    "build": "npm-run-all compile:scss prefix:css concat:css compress:css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krizten/css-workflow-boilerplate.git"
+  },
+  "keywords": [
+    "css",
+    "scss",
+    "7-1pattern",
+    "autoprefixer",
+    "concat",
+    "minify"
+  ],
+  "author": "Christian Effiong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krizten/css-workflow-boilerplate/issues"
+  },
+  "homepage": "https://github.com/krizten/css-workflow-boilerplate#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "concat": "^1.0.3",
+    "node-sass": "^4.9.3",
+    "npm-run-all": "^4.1.3",
+    "postcss-cli": "^6.0.0"
+  }
+}
