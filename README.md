@@ -16,7 +16,7 @@
 ### Production 
 - ``` build: ⇒``` Compile SCSS stylesheets to a minified version suitable for production. 
 
-### Credits
+### Reference
   - [Hugo Giraudel](https://github.com/HugoGiraudel/sass-boilerplate) 
   - [Jonas Schmedtmann](https://github.com/jonasschmedtmann/advanced-css-course)
 
